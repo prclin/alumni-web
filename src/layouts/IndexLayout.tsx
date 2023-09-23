@@ -1,18 +1,17 @@
-import { RouterProvider } from 'react-router-dom'
 import React from 'react'
-import { type Router as RemixRouter } from '@remix-run/router/dist/router'
 import { Layout } from 'antd'
-import { Content } from 'antd/es/layout/layout'
+import { Content, Footer } from 'antd/es/layout/layout'
+import BottomMenu from '@/components/BottomMenu'
+import { Outlet } from 'react-router-dom'
 
-interface props {
-  router: RemixRouter
-}
-
-const IndexLayout: React.FC<props> = (props) => (
+const IndexLayout: React.FC = () => (
   <Layout className="h-full">
     <Content>
-      <RouterProvider router={props.router}/>
+      <Outlet/>
     </Content>
+    <Footer className="fixed left-0 bottom-0 right-0 p-0">
+      <BottomMenu/>
+    </Footer>
   </Layout>
 )
 
