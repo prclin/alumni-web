@@ -21,7 +21,6 @@ const routes: RouteObject[] = [
     element: <HomeView/>
   },
   {
-    index: true,
     path: 'home',
     element: <HomeView/>
   },

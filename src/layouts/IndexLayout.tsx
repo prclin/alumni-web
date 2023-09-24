@@ -1,17 +1,15 @@
 import React from 'react'
 import { Layout } from 'antd'
-import { Content, Footer } from 'antd/es/layout/layout'
+import { Content } from 'antd/es/layout/layout'
 import BottomMenu from '@/components/BottomMenu'
 import { Outlet } from 'react-router-dom'
 
 const IndexLayout: React.FC = () => (
-  <Layout className="h-full">
+  <Layout className="h-full mb-20 relative">
     <Content>
       <Outlet/>
     </Content>
-    <Footer className="fixed left-0 bottom-0 right-0 p-0">
-      <BottomMenu/>
-    </Footer>
+    <BottomMenu/>
   </Layout>
 )
 
