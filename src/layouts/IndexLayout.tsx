@@ -5,8 +5,8 @@ import BottomMenu from '@/components/BottomMenu'
 import { Outlet } from 'react-router-dom'
 
 const IndexLayout: React.FC = () => (
-  <Layout className="h-full mb-20 relative">
-    <Content>
+  <Layout className="h-full">
+    <Content className="pb-20">
       <Outlet/>
     </Content>
     <BottomMenu/>

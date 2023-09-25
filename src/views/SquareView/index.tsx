@@ -26,16 +26,16 @@ class SquareView extends React.Component<any, {
 
   render (): React.ReactNode {
     return (
-      <>
+      <div className="h-full flex flex-col">
         {/* menu */}
         <Menu className="justify-center" mode="horizontal" items={items}/>
         {/* content */}
-        <div className="py-3 px-6">
+        <div className="py-3 px-6 flex-1 overflow-y-auto">
           <BreakCard onLikeChange={() => {
             this.setState({ liked: !this.state.liked })
           }} liked={this.state.liked}/>
         </div>
-      </>
+      </div>
     )
   }
 }

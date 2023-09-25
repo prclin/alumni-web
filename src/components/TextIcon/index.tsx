@@ -5,12 +5,13 @@ interface TextIconProps {
   className?: string
   onClick?: typeof EventFunction
   children?: React.ReactNode
-  text?: string
+  text?: React.ReactNode
+  textClass?: string
   direction?: 'vertical' | 'horizontal' | 'vertical-reverse' | 'horizontal-reverse'
 }
 
 const TextIcon: React.FC<TextIconProps> = (props: TextIconProps) => {
-  const { className, onClick, children, text, direction } = props
+  const { className, onClick, textClass, children, text, direction } = props
   let orientation
   switch (direction) {
     case 'vertical':
@@ -30,8 +31,8 @@ const TextIcon: React.FC<TextIconProps> = (props: TextIconProps) => {
   }
   return (
     <div onClick={onClick} className={className + ' ' + orientation + ' ' + 'flex items-center cursor-pointer'}>
-      {props.children}
-      <span className="text-sm m-1">{props.text}</span>
+      {children}
+      <span className={textClass + ' ' + 'text-sm m-1'}>{text}</span>
     </div>
   )
 }

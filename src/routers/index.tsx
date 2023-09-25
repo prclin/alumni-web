@@ -5,6 +5,7 @@ import HomeView from '@/views/HomeView'
 import SquareView from '@/views/SquareView'
 import MessageView from '@/views/MessageView'
 import { Button, Result } from 'antd'
+import AccountView from '@/views/AccountView'
 
 const routes: RouteObject[] = [
   {
@@ -34,7 +35,7 @@ const routes: RouteObject[] = [
   },
   {
     path: 'account',
-    element: <MessageView/>
+    element: <AccountView/>
   }
 ]
 const router = createBrowserRouter([

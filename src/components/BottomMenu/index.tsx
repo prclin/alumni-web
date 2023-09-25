@@ -13,7 +13,7 @@ interface IconProps {
 const Icon: React.FC<IconProps> = (props: IconProps) => {
   return (
     <div onClick={props.onClick}
-         className={((props.checked === true) ? 'text-amber-700' : '') + ' ' + 'w-fit flex flex-col justify-center items-center hover:text-amber-900 cursor-pointer'}>
+         className={((props.checked === true) ? 'text-[#ffd400]' : '') + ' ' + 'w-fit flex flex-col justify-center items-center hover:text-[#ffd400] cursor-pointer'}>
     <span className="text-xl">
       {props.children}
     </span>
@@ -21,33 +21,34 @@ const Icon: React.FC<IconProps> = (props: IconProps) => {
     </div>
   )
 }
+
+const menuItems = [
+  {
+    text: '主页',
+    icon: <HomeOutlined/>,
+    path: '/home'
+  },
+  {
+    text: '广场',
+    icon: <WifiOutlined/>,
+    path: '/square'
+  },
+  {
+    text: '消息',
+    icon: <MessageOutlined/>,
+    path: '/message'
+  },
+  {
+    text: '个人',
+    icon: <UserOutlined/>,
+    path: '/account'
+  }
+]
 const BottomMenu: React.FC = () => {
   const navigate = useNavigate()
   const location = useLocation()
   const paths = location.pathname.split('/')
   const tab = paths[1] === '' ? 'home' : paths[1]
-  const menuItems = [
-    {
-      text: '主页',
-      icon: <HomeOutlined/>,
-      path: '/home'
-    },
-    {
-      text: '广场',
-      icon: <WifiOutlined/>,
-      path: '/square'
-    },
-    {
-      text: '消息',
-      icon: <MessageOutlined/>,
-      path: '/message'
-    },
-    {
-      text: '个人',
-      icon: <UserOutlined/>,
-      path: '/account'
-    }
-  ]
   return (
     <div className="bg-white h-20 fixed left-0 bottom-0 right-0 flex justify-evenly">
       {menuItems.map(item => (
